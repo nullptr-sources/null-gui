@@ -25,7 +25,7 @@ namespace null::gui {
 	static void end_frame() {
 		std::ranges::for_each(c_window::window_stack, [](std::shared_ptr<c_window> window) {
 			if(!(window->flags & e_widget_flags::visible)) return;
-			window->draw();
+			window->handle();
 			});
 	}
 

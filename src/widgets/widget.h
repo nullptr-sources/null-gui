@@ -68,6 +68,12 @@ namespace null {
 
 			virtual void add_widget(c_widget* widget);
 
+			virtual void handle() {
+				setup();
+				draw();
+			}
+
+			virtual void setup() { } //here u setup widget variables (size and other). Called before draw.
 			virtual void draw();
 
 		public: //events

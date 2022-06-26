@@ -13,6 +13,8 @@ namespace null::gui {
 		for(std::shared_ptr<c_widget> widget : node.childs) {
 			if(!(widget->flags & e_widget_flags::visible)) continue;
 
+			widget->setup();
+
 			if(!(widget->flags & e_widget_flags::ignore_auto_positioning))
 				append_auto_positioning(widget.get());
 

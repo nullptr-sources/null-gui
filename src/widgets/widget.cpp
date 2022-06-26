@@ -34,12 +34,12 @@ namespace null::gui {
 		std::vector<c_widget*> draw_on_top_layer{ };
 		for(std::shared_ptr<c_widget> widget : node.childs) {
 			if(!(widget->flags & e_widget_flags::visible)) continue;
-			
+
 			if(widget->flags & e_widget_flags::draw_on_top_layer) draw_on_top_layer.push_back(widget.get());
-			else widget->draw();
+			else widget->handle();
 		}
 
-		std::ranges::for_each(draw_on_top_layer, [](c_widget* widget) { widget->draw(); });
+		std::ranges::for_each(draw_on_top_layer, [](c_widget* widget) { widget->handle(); });
 	}
 
 	void c_widget::on_focused() {

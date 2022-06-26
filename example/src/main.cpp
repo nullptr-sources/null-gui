@@ -10,18 +10,25 @@ void create_ui() {
 		auto window{ new null::gui::c_window{ "window 1", { 100 }, { 200 } } };
 		null::gui::c_window::add_window(window);
 		{
-			auto button{ new null::gui::c_button("button") };
-			button->size = { 40, 20 };
-			window->add_widget(button);
+			window->add_widget(new null::gui::c_button{ "window button 1" });
+			window->add_widget(new null::gui::c_button{ "window button 2" });
 
-			auto button_2{ new null::gui::c_button("button 2") };
-			button_2->size = { 40, 20 };
-			window->add_widget(button_2);
+			auto group{ new null::gui::c_group{ "group", { 100 } } };
+			window->add_widget(group);
+			{
+				group->add_widget(new null::gui::c_button{ "group button 1" });
+				group->add_widget(new null::gui::c_button{ "group button 2" });
+			}
 		}
 	}
 
 	{
 		auto window{ new null::gui::c_window{ "window 2", { 310, 100 }, { 60 } } };
+		null::gui::c_window::add_window(window);
+	}
+
+	{
+		auto window{ new null::gui::c_window{ "window 3", { 380, 100 }, { 60 } } };
 		null::gui::c_window::add_window(window);
 	}
 }

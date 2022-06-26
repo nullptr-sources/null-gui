@@ -2,6 +2,12 @@
 #include <containers/window/window.h>
 
 namespace null::gui {
+	void c_window::focus() {
+		if(auto finded = std::ranges::find_if(window_stack, [=](const std::shared_ptr<c_window> winodw) { return winodw.get() == this; });
+			finded != window_stack.end())
+			std::rotate(finded, std::next(finded), window_stack.end());
+	}
+
 	void c_window::append_auto_positioning(c_widget* widget) {
 		c_container::append_auto_positioning(widget);
 		auto_positioning.next_position.y += style.widget_padding;

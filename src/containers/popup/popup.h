@@ -9,10 +9,17 @@ namespace null::gui {
 			float titlebar_height{ 20.f };
 
 			color_t background_color{ 10, 10, 10 };
+
+			vec2_t padding{ 10, 10 };
+
+			float widget_padding{ 10.f };
 		} style{ };
 
 	public:
-		c_popup(std::string_view _name) : c_container(_name) { flags &= ~e_widget_flags::visible; }
+		c_popup(std::string_view _name) : c_container(_name) {
+			flags &= ~e_widget_flags::visible;
+			working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
+		}
 
 		bool can_close_on_lost_focus(c_widget* new_focused_widget);
 
@@ -20,6 +27,7 @@ namespace null::gui {
 		void open() override;
 		void close() override;
 
+		void append_auto_positioning(c_widget* widget) override;
 		void draw() override;
 
 	public: //events

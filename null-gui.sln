@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third-party", "third-party", "{B06B161B-C3FD-40B3-BF46-8B160F65C874}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "example\example.vcxproj", "{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E} = {6EEB958E-7F65-4786-AFCC-EE8947725C2E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "null-sdk", "third-party\null-sdk\null-sdk.vcxproj", "{F7A10A5C-0FAE-424B-8F2B-6CC4E4D898D1}"
 EndProject

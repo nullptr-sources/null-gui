@@ -17,6 +17,7 @@ namespace null::gui {
 		c_button(std::string_view _name) : c_widget(_name) { }
 
 	public:
+		void setup() override;
 		void draw() override;
 	};
 }

@@ -2,6 +2,10 @@
 #include <widgets/button/button.h>
 
 namespace null::gui {
+	void c_button::setup() {
+		size = render::get_current_font()->calc_text_size(name) + vec2_t{ 10, 5 };
+	}
+
 	void c_button::draw() {
 		color_t button_color{ style.default_color };
 		if(state & e_widget_state::active) button_color = style.active_color;

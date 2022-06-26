@@ -31,8 +31,9 @@ namespace null::gui {
 			working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
 		}
 
-		void focus() { std::ranges::rotate(window_stack, std::next(std::ranges::find_if(window_stack, [=](const std::shared_ptr<c_window> winodw) { return winodw.get() == this; }))); }
 		bool is_topmost() { return window_stack.back().get() == this; }
+		
+		void focus();
 
 	public:
 		void append_auto_positioning(c_widget* widget) override;
