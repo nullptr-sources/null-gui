@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d11addc5-089b-4237-a3dd-c21f8f81dcf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\widgets">
+      <UniqueIdentifier>{30ace7bd-c6bd-4be0-8ab5-b925d27439ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\containers">
+      <UniqueIdentifier>{b343a10d-ce5b-4162-9cfe-9c2ff133f99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\widgets\button">
+      <UniqueIdentifier>{8a4dae63-c240-4e18-bddd-7f591e0f37c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\containers\group">
+      <UniqueIdentifier>{d90c3b61-fd0d-4d23-8071-2c7e08c87a62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\containers\popup">
+      <UniqueIdentifier>{76261a08-7d5f-40ed-a4d6-c22ec0c84096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\containers\window">
+      <UniqueIdentifier>{79d101ec-6025-457f-98e4-e6453240ed71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\widgets\widget.cpp">
+      <Filter>src\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\widgets\button\button.cpp">
+      <Filter>src\widgets\button</Filter>
+    </ClCompile>
+    <ClCompile Include="src\containers\container.cpp">
+      <Filter>src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\containers\group\group.cpp">
+      <Filter>src\containers\group</Filter>
+    </ClCompile>
+    <ClCompile Include="src\containers\popup\popup.cpp">
+      <Filter>src\containers\popup</Filter>
+    </ClCompile>
+    <ClCompile Include="src\containers\window\window.cpp">
+      <Filter>src\containers\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\null-gui.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\widgets\widget.h">
+      <Filter>src\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\widgets\button\button.h">
+      <Filter>src\widgets\button</Filter>
+    </ClInclude>
+    <ClInclude Include="src\containers\container.h">
+      <Filter>src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\containers\group\group.h">
+      <Filter>src\containers\group</Filter>
+    </ClInclude>
+    <ClInclude Include="src\containers\popup\popup.h">
+      <Filter>src\containers\popup</Filter>
+    </ClInclude>
+    <ClInclude Include="src\containers\window\window.h">
+      <Filter>src\containers\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\null-gui.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

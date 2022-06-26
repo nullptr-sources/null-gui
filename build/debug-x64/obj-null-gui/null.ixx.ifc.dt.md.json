@@ -1,0 +1,9 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "f:\\sources\\main-branch\\nullptr-sources\\null-gui\\src\\null.ixx",
+        "ProvidedModule": "null",
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

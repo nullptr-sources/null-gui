@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "null-gui", "null-gui.vcxproj", "{6EEB958E-7F65-4786-AFCC-EE8947725C2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third-party", "third-party", "{B06B161B-C3FD-40B3-BF46-8B160F65C874}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "example\example.vcxproj", "{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug|x64 = debug|x64
+		debug|x86 = debug|x86
+		release|x64 = release|x64
+		release|x86 = release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.debug|x64.ActiveCfg = debug|x64
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.debug|x64.Build.0 = debug|x64
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.debug|x86.ActiveCfg = debug|Win32
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.debug|x86.Build.0 = debug|Win32
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.release|x64.ActiveCfg = release|x64
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.release|x64.Build.0 = release|x64
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.release|x86.ActiveCfg = release|Win32
+		{6EEB958E-7F65-4786-AFCC-EE8947725C2E}.release|x86.Build.0 = release|Win32
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.debug|x64.ActiveCfg = debug|x64
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.debug|x64.Build.0 = debug|x64
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.debug|x86.ActiveCfg = debug|Win32
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.debug|x86.Build.0 = debug|Win32
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.release|x64.ActiveCfg = release|x64
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.release|x64.Build.0 = release|x64
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.release|x86.ActiveCfg = release|Win32
+		{8FBB23EF-8409-43A6-8CC6-6B18BD4E3414}.release|x86.Build.0 = release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ED761D8-08D7-4522-9523-8BBFA3F41AEF}
+	EndGlobalSection
+EndGlobal
