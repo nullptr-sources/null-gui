@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\null-gui.vcxproj">
-      <Project>{3e06775b-8453-4d4e-8776-1ca2fc9da884}</Project>
+      <Project>{6eeb958e-7f65-4786-afcc-ee8947725c2e}</Project>
     </ProjectReference>
     <ProjectReference Include="..\third-party\null-input\null-input.vcxproj">
       <Project>{7e069d39-333d-4e89-90ae-90b382dd5f96}</Project>
@@ -116,7 +116,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third-party\null-sdk\src\;$(SolutionDir)third-party\null-render\src\;$(SolutionDir)third-party\null-input\src\;$(SolutionDir)third-party\stb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third-party\null-sdk\src\;$(SolutionDir)third-party\null-render\src\;$(SolutionDir)third-party\null-input\src\;$(SolutionDir)third-party\stb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +152,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third-party\null-sdk\src\;$(SolutionDir)third-party\null-render\src\;$(SolutionDir)third-party\null-input\src\;$(SolutionDir)third-party\stb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,7 +170,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)third-party\null-sdk\src\;$(SolutionDir)third-party\null-render\src\;$(SolutionDir)third-party\null-input\src\;$(SolutionDir)third-party\stb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
