@@ -2,6 +2,11 @@
 #include <containers/group/group.h>
 
 namespace null::gui {
+	void c_group::append_auto_size() {
+		i_container::append_auto_size();
+		size += style.padding;
+	}
+
 	void c_group::setup_auto_positioning() {
 		i_container::setup_auto_positioning();
 		auto_positioning.next_position += working_region.min;

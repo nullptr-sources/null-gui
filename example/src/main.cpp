@@ -12,23 +12,27 @@ void create_ui() {
 		{
 			window->add_widget(new null::gui::c_button{ "window button 1" });
 
-			auto column{ new null::gui::c_columns{ 2 } };
+			auto column{ new null::gui::c_columns{ 3 } };
 			{
-				column->at(0)->add_widget(new null::gui::c_button{ "column[0]0" });
-				column->at(0)->add_widget(new null::gui::c_button{ "column[0]1" });
+				column->at(0)->add_widget(new null::gui::c_button{ "0" });
+				column->at(0)->add_widget(new null::gui::c_button{ "1" });
 
-				column->at(1)->add_widget(new null::gui::c_button{ "column[1]0" });
-				column->at(1)->add_widget(new null::gui::c_button{ "column[1]1" });
+				column->at(1)->add_widget(new null::gui::c_button{ "0" });
+				column->at(1)->add_widget(new null::gui::c_button{ "1" });
+
+				column->at(2)->add_widget(new null::gui::c_button{ "0" });
+				column->at(2)->add_widget(new null::gui::c_button{ "1" });
 			}
 			window->add_widget(column);
 
 			window->add_widget(new null::gui::c_button{ "window button 2" });
 
-			auto group{ new null::gui::c_group{ "group", { 100 } } };
+			auto group{ new null::gui::c_group{ "group" } };
 			window->add_widget(group);
 			{
 				group->add_widget(new null::gui::c_button{ "group button 1" });
 				group->add_widget(new null::gui::c_button{ "group button 2" });
+				group->add_widget(new null::gui::c_button{ "group button 3" });
 			}
 		}
 	}

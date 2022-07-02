@@ -3,7 +3,7 @@
 
 namespace null::gui {
 	void c_window::focus() {
-		if(auto finded = std::ranges::find_if(window_stack, [=](const std::shared_ptr<c_window> winodw) { return winodw.get() == this; });
+		if(auto finded = std::ranges::find_if(window_stack, [=](const std::shared_ptr<c_window>& winodw) { return winodw.get() == this; });
 			finded != window_stack.end())
 			std::rotate(finded, std::next(finded), window_stack.end());
 	}
@@ -27,8 +27,6 @@ namespace null::gui {
 		gui_layer.draw_rect_filled(pos, pos + size, style.background_color); //draw background
 		gui_layer.draw_rect_filled(pos, pos + vec2_t{ size.x, style.titlebar_height }, style.titlebar_color); //draw titlebar
 		gui_layer.draw_text(name, rect_t{ pos, pos + vec2_t{ style.titlebar_text_offset, style.titlebar_height } }.center(), { }, e_text_flags::aligin_center_y); //draw titlebar text
-
-		gui_layer.draw_rect_filled(pos + working_region.min, pos + working_region.max, { 100, 100, 100, 50 });
 
 		i_container::draw();
 	}

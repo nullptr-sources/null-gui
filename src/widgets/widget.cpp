@@ -16,7 +16,7 @@ namespace null::gui {
 	std::vector<i_widget*> i_widget::node_t::child_node() {
 		std::vector<i_widget*> node{ };
 
-		for(std::shared_ptr<i_widget> child : childs) {
+		for(std::shared_ptr<i_widget>& child : childs) {
 			auto child_node = child->node.child_node();
 			node.push_back(child.get());
 			node.insert(node.end(), child_node.begin(), child_node.end());
@@ -31,7 +31,7 @@ namespace null::gui {
 	}
 
 	void i_widget::setup() {
-		std::ranges::for_each(node.childs, [](std::shared_ptr<i_widget> widget) {
+		std::ranges::for_each(node.childs, [](std::shared_ptr<i_widget>& widget) {
 			if(!(widget->flags & e_widget_flags::visible)) return;
 			widget->setup();
 			});
@@ -39,7 +39,7 @@ namespace null::gui {
 
 	void i_widget::draw() {
 		std::vector<i_widget*> draw_on_top_layer{ };
-		for(std::shared_ptr<i_widget> widget : node.childs) {
+		for(std::shared_ptr<i_widget>& widget : node.childs) {
 			if(!(widget->flags & e_widget_flags::visible)) continue;
 
 			if(widget->flags & e_widget_flags::draw_on_top_layer) draw_on_top_layer.push_back(widget.get());
@@ -104,7 +104,7 @@ namespace null::gui {
 	}
 
 	bool i_widget::event_control(e_widget_event msg) {
-		for(std::shared_ptr<i_widget> child_widget : node.childs | std::views::reverse) {
+		for(std::shared_ptr<i_widget>& child_widget : node.childs | std::views::reverse) {
 			if(child_widget->flags & e_widget_flags::visible && child_widget->event_control(msg)) return true;
 		}
 

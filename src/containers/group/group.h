@@ -21,11 +21,13 @@ namespace null::gui {
 	public:
 
 	public:
-		c_group(std::string_view _name, vec2_t _size) : i_container(_name) {
+		c_group(std::string_view _name, vec2_t _size = -1) : i_container(_name) {
 			size = _size;
+			if(size == -1) container_flags |= e_container_flags::auto_size;
 		}
 
 	public:
+		void append_auto_size() override;
 		void setup_auto_positioning() override;
 		void append_auto_positioning(i_widget* widget) override;
 

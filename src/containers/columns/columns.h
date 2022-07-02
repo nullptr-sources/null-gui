@@ -16,8 +16,9 @@ namespace null::gui {
 			} style{ };
 
 		public:
-			c_column() : i_container("column") { }
+			c_column() : i_container("column") { container_flags |= e_container_flags::auto_size; }
 
+			void append_auto_size() override;
 			void append_auto_positioning(i_widget* widget) override;
 			bool event_control(e_widget_event event) override;
 		};
@@ -33,7 +34,6 @@ namespace null::gui {
 		void append_auto_positioning(i_widget* widget) override;
 
 		void setup() override;
-		void draw() override;
 
 		bool event_control(e_widget_event event) override;
 	};

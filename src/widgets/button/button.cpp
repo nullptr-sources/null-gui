@@ -4,6 +4,7 @@
 namespace null::gui {
 	void c_button::setup() {
 		size = render::get_current_font()->calc_text_size(name) + vec2_t{ 10, 5 };
+		size.x = std::max(size.x, node.parent->working_region.size().x);
 		i_widget::setup();
 	}
 
