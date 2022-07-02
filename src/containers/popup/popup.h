@@ -2,7 +2,7 @@
 #include <containers/container.h>
 
 namespace null::gui {
-	class c_popup : public c_container {
+	class c_popup : public i_container {
 	public:
 		struct style_t {
 			color_t titlebar_color{ 255, 100, 100 };
@@ -16,24 +16,25 @@ namespace null::gui {
 		} style{ };
 
 	public:
-		c_popup(std::string_view _name) : c_container(_name) {
+		c_popup(std::string_view _name) : i_container(_name) {
 			flags &= ~e_widget_flags::visible;
 			working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
 		}
 
-		bool can_close_on_lost_focus(c_widget* new_focused_widget);
+		bool can_close_on_lost_focus(i_widget* new_focused_widget);
 
 	public:
 		void open() override;
 		void close() override;
 
-		void append_auto_positioning(c_widget* widget) override;
+		void setup_auto_positioning() override;
+		void append_auto_positioning(i_widget* widget) override;
 		void draw() override;
 
 	public: //events
-		void on_child_lost_focus(c_widget* child, c_widget* new_focused_widget) override;
+		void on_child_lost_focus(i_widget* child, i_widget* new_focused_widget) override;
 		
 		void on_focused() override;
-		void on_lost_focus(c_widget* new_focused_widget) override;
+		void on_lost_focus(i_widget* new_focused_widget) override;
 	};
 }

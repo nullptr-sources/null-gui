@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\containers\columns\columns.cpp" />
     <ClCompile Include="src\containers\container.cpp" />
     <ClCompile Include="src\containers\group\group.cpp" />
     <ClCompile Include="src\containers\popup\popup.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="src\widgets\widget.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\containers\columns\columns.h" />
     <ClInclude Include="src\containers\container.h" />
     <ClInclude Include="src\containers\group\group.h" />
     <ClInclude Include="src\containers\popup\popup.h" />

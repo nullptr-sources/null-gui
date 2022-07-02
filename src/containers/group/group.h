@@ -2,7 +2,7 @@
 #include <containers/container.h>
 
 namespace null::gui {
-	class c_group : public c_container {
+	class c_group : public i_container {
 	public:
 		struct style_t {
 			float titlebar_height{ 15 };
@@ -21,14 +21,15 @@ namespace null::gui {
 	public:
 
 	public:
-		c_group(std::string_view _name, vec2_t _size) : c_container(_name) {
+		c_group(std::string_view _name, vec2_t _size) : i_container(_name) {
 			size = _size;
-			working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
 		}
 
 	public:
-		void append_auto_positioning(c_widget* widget) override;
+		void setup_auto_positioning() override;
+		void append_auto_positioning(i_widget* widget) override;
 
+		void setup() override;
 		void draw() override;
 	};
 }

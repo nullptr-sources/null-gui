@@ -38,9 +38,9 @@ namespace null {
 	enum_create_cast_operator(e_widget_state, -);
 
 	namespace gui {
-		class c_widget {
+		class i_widget {
 		public:
-			static inline std::map<e_widget_state, c_widget*> widgets{ };
+			static inline std::map<e_widget_state, i_widget*> widgets{ };
 
 		public:
 			e_widget_flags flags{ e_widget_flags::visible };
@@ -49,39 +49,41 @@ namespace null {
 			std::string name{ };
 			vec2_t pos{ }, size{ };
 
+			rect_t working_region{ };
+
 			vec2_t clicked_offset{ };
 
 			array_callbacks_t<e_widget_callbacks> callbacks{ };
 
 			struct node_t {
-				c_widget* parent{ };
-				std::vector<std::shared_ptr<c_widget>> childs{ };
+				i_widget* parent{ };
+				std::vector<std::shared_ptr<i_widget>> childs{ };
 
-				std::vector<c_widget*> parent_node();
-				std::vector<c_widget*> child_node();
+				std::vector<i_widget*> parent_node();
+				std::vector<i_widget*> child_node();
 			} node{ };
 
 		public:
-			c_widget(std::string_view _name) : name(_name) { }
+			i_widget(std::string_view _name) : name(_name) { }
 
 			virtual bool can_hovered() { return rect_t{ pos, pos + size }.contains(input::mouse.pos); }
 
-			virtual void add_widget(c_widget* widget);
+			virtual void add_widget(i_widget* widget);
 
 			virtual void handle() {
 				setup();
 				draw();
 			}
 
-			virtual void setup() { } //here u setup widget variables (size and other). Called before draw.
+			virtual void setup();
 			virtual void draw();
 
 		public: //events
-			virtual void on_child_focused(c_widget* child) { }
-			virtual void on_child_lost_focus(c_widget* child, c_widget* new_focused_widget) { }
+			virtual void on_child_focused(i_widget* child) { }
+			virtual void on_child_lost_focus(i_widget* child, i_widget* new_focused_widget) { }
 
 			virtual void on_focused();
-			virtual void on_lost_focus(c_widget* new_focused_widget);
+			virtual void on_lost_focus(i_widget* new_focused_widget);
 
 			virtual void on_mouse_move();
 			virtual void on_mouse_enter();

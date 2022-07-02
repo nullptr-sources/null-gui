@@ -7,10 +7,21 @@ null::render::directx9::c_window window{ };
 
 void create_ui() {
 	{
-		auto window{ new null::gui::c_window{ "window 1", { 100 }, { 200 } } };
+		auto window{ new null::gui::c_window{ "window 1", { 100 }, { 200, 300 } } };
 		null::gui::c_window::add_window(window);
 		{
 			window->add_widget(new null::gui::c_button{ "window button 1" });
+
+			auto column{ new null::gui::c_columns{ 2 } };
+			{
+				column->at(0)->add_widget(new null::gui::c_button{ "column[0]0" });
+				column->at(0)->add_widget(new null::gui::c_button{ "column[0]1" });
+
+				column->at(1)->add_widget(new null::gui::c_button{ "column[1]0" });
+				column->at(1)->add_widget(new null::gui::c_button{ "column[1]1" });
+			}
+			window->add_widget(column);
+
 			window->add_widget(new null::gui::c_button{ "window button 2" });
 
 			auto group{ new null::gui::c_group{ "group", { 100 } } };
@@ -34,14 +45,14 @@ void create_ui() {
 }
 
 void destroy_ui() {
-	null::gui::c_widget::widgets.clear();
+	null::gui::i_widget::widgets.clear();
 	null::gui::c_window::window_stack.clear();
 }
 
 #define debug_print_widget(widget) \
 widgets.data.push_back({#widget, { 255, 100, 100 }}); \
 widgets.data.push_back({std::format(" = "), { }}); \
-widgets.data.push_back({std::format("{}\n", null::gui::c_widget::widgets[null::widget] ? null::gui::c_widget::widgets[null::widget]->name : "empty"), { 100, 255, 100 }});
+widgets.data.push_back({std::format("{}\n", null::gui::i_widget::widgets[null::widget] ? null::gui::i_widget::widgets[null::widget]->name : "empty"), { 100, 255, 100 }});
 
 void main_loop() {
 	null::render::begin_frame(window);

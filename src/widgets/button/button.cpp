@@ -4,6 +4,7 @@
 namespace null::gui {
 	void c_button::setup() {
 		size = render::get_current_font()->calc_text_size(name) + vec2_t{ 10, 5 };
+		i_widget::setup();
 	}
 
 	void c_button::draw() {
@@ -14,6 +15,6 @@ namespace null::gui {
 		gui_layer.draw_rect_filled(pos, pos + size, button_color);
 		gui_layer.draw_text(name, rect_t{ pos, pos + size }.center(), style.text_color, e_text_flags::aligin_center);
 
-		c_widget::draw();
+		i_widget::draw();
 	}
 }

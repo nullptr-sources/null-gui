@@ -2,7 +2,7 @@
 #include <containers/container.h>
 
 namespace null::gui {
-	class c_window : public c_container {
+	class c_window : public i_container {
 	public:
 		static inline std::vector<std::shared_ptr<c_window>> window_stack{ };
 
@@ -26,9 +26,8 @@ namespace null::gui {
 		} style{ };
 
 	public:
-		c_window(std::string_view _name, vec2_t _pos, vec2_t _size) : c_container(_name) {
+		c_window(std::string_view _name, vec2_t _pos, vec2_t _size) : i_container(_name) {
 			pos = _pos; size = _size;
-			working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
 		}
 
 		bool is_topmost() { return window_stack.back().get() == this; }
@@ -36,12 +35,14 @@ namespace null::gui {
 		void focus();
 
 	public:
-		void append_auto_positioning(c_widget* widget) override;
+		void setup_auto_positioning() override;
+		void append_auto_positioning(i_widget* widget) override;
 
+		void setup() override;
 		void draw() override;
 
 	public: //events
-		void on_child_focused(c_widget* child) override;
+		void on_child_focused(i_widget* child) override;
 		void on_focused() override;
 		void on_mouse_move() override;
 		void on_mouse_key_down() override;

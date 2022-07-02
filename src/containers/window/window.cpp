@@ -8,9 +8,19 @@ namespace null::gui {
 			std::rotate(finded, std::next(finded), window_stack.end());
 	}
 
-	void c_window::append_auto_positioning(c_widget* widget) {
-		c_container::append_auto_positioning(widget);
+	void c_window::setup_auto_positioning() {
+		i_container::setup_auto_positioning();
+		auto_positioning.next_position += working_region.min;
+	}
+
+	void c_window::append_auto_positioning(i_widget* widget) {
+		i_container::append_auto_positioning(widget);
 		auto_positioning.next_position.y += style.widget_padding;
+	}
+
+	void c_window::setup() {
+		working_region = { vec2_t{ 0, style.titlebar_height } + style.padding, size - style.padding };
+		i_container::setup();
 	}
 
 	void c_window::draw() {
@@ -18,25 +28,25 @@ namespace null::gui {
 		gui_layer.draw_rect_filled(pos, pos + vec2_t{ size.x, style.titlebar_height }, style.titlebar_color); //draw titlebar
 		gui_layer.draw_text(name, rect_t{ pos, pos + vec2_t{ style.titlebar_text_offset, style.titlebar_height } }.center(), { }, e_text_flags::aligin_center_y); //draw titlebar text
 
-		auto_positioning.next_position = pos + working_region.min;
+		gui_layer.draw_rect_filled(pos + working_region.min, pos + working_region.max, { 100, 100, 100, 50 });
 
-		c_container::draw();
+		i_container::draw();
 	}
 
-	void c_window::on_child_focused(c_widget* child) {
-		c_container::on_child_focused(child);
+	void c_window::on_child_focused(i_widget* child) {
+		i_container::on_child_focused(child);
 
 		if(!is_topmost()) focus();
 	}
 
 	void c_window::on_focused() {
-		c_container::on_focused();
+		i_container::on_focused();
 
 		if(!is_topmost()) focus();
 	}
 
 	void c_window::on_mouse_move() {
-		c_container::on_mouse_move();
+		i_container::on_mouse_move();
 
 		if(state & e_widget_state::active) {
 			pos = input::mouse.pos - clicked_offset;
@@ -44,7 +54,7 @@ namespace null::gui {
 	}
 
 	void c_window::on_mouse_key_down() {
-		c_container::on_mouse_key_down();
+		i_container::on_mouse_key_down();
 
 		clicked_offset = input::mouse.pos - pos;
 	}

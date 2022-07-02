@@ -3,7 +3,7 @@
 #include <containers/popup/popup.h>
 
 namespace null::gui {
-	class c_button : public c_widget {
+	class c_button : public i_widget {
 	public:
 		struct style_t {
 			color_t default_color{ 50, 50, 50 };
@@ -14,7 +14,7 @@ namespace null::gui {
 		} style;
 
 	public:
-		c_button(std::string_view _name) : c_widget(_name) { }
+		c_button(std::string_view _name) : i_widget(_name) { }
 
 	public:
 		void setup() override;

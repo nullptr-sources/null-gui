@@ -21,8 +21,8 @@ namespace null::gui {
 				break;
 		}
 
-		if(c_widget::widgets[e_widget_state::active] && c_widget::widgets[e_widget_state::active]->event_control(widget_msg)) return -1;
-		if(c_widget::widgets[e_widget_state::focused] && c_widget::widgets[e_widget_state::focused]->event_control(widget_msg)) return -1;
+		if(i_widget::widgets[e_widget_state::active] && i_widget::widgets[e_widget_state::active]->event_control(widget_msg)) return -1;
+		if(i_widget::widgets[e_widget_state::focused] && i_widget::widgets[e_widget_state::focused]->event_control(widget_msg)) return -1;
 
 		for(std::shared_ptr<c_window> window : c_window::window_stack | std::views::reverse) {
 			if(window->event_control(widget_msg))
@@ -31,13 +31,13 @@ namespace null::gui {
 
 		switch(widget_msg) {
 			case e_widget_event::mouse_key_down: {
-				if(c_widget::widgets[e_widget_state::focused])
-					c_widget::widgets[e_widget_state::focused]->on_lost_focus(nullptr);
+				if(i_widget::widgets[e_widget_state::focused])
+					i_widget::widgets[e_widget_state::focused]->on_lost_focus(nullptr);
 			} break;
 
 			case e_widget_event::mouse_move: {
-				if(c_widget::widgets[e_widget_state::hovered])
-					c_widget::widgets[e_widget_state::hovered]->on_mouse_exit();
+				if(i_widget::widgets[e_widget_state::hovered])
+					i_widget::widgets[e_widget_state::hovered]->on_mouse_exit();
 			} break;
 		}
 

@@ -6,6 +6,7 @@
 
 #include <widgets/button/button.h>
 
+#include <containers/columns/columns.h>
 #include <containers/popup/popup.h>
 #include <containers/group/group.h>
 #include <containers/window/window.h>
