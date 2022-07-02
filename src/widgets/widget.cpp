@@ -110,7 +110,7 @@ namespace null::gui {
 
 		switch(msg) {
 			case e_widget_event::mouse_move: {
-				if(can_hovered() || state & e_widget_state::active) {
+				if(can_hovered() && (!widgets[e_widget_state::active] || state & e_widget_state::active)) {
 					if(!(state & e_widget_state::hovered)) {
 						if(widgets[e_widget_state::hovered]) {
 							widgets[e_widget_state::hovered]->on_mouse_exit();
